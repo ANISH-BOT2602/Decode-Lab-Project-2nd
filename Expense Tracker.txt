@@ -1,0 +1,20 @@
+# Initialize the accumulator
+total_spent = 0
+
+print("--- Expense Tracker ---")
+print("Enter your expenses one by one. Type 'done' to see the total.")
+
+while True:
+    user_input = input("Enter expense amount: ")
+    
+    if user_input.lower() == 'done':
+        break
+    
+    try:
+        # Convert input to a number and add it to the total
+        expense = float(user_input)
+        total_spent = total_spent + expense
+    except ValueError:
+        print("Invalid input. Please enter a number or 'done'.")
+
+print(f"\nTotal Spent: ${total_spent:,.2f}")
